@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Script assumes user using default profile
+
+dir=~/.zen
+profile=/tmp
+
+for entry in "$dir"/*; do
+  if [[ $entry == *"(release)"* ]]; then
+    profile=$entry
+  fi
+done
+
+mkdir -p "$profile"/chrome
+
+cat ./zen/userChrome.css >>"$profile"/chrome/userChrome.css
+cat ./zen/userContent.css >>"$profile"/chrome/userContent.css
+cp ./zen/zen-logo-mocha.svg "$profile"/chrome/
+
+echo "Done!"
