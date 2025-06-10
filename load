@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euo pipefail
+
+load() {
+
+  for config in ./config/*; do
+    cp -r "$config" "$HOME/.config/"
+  done
+}
+
+while true; do
+  read -r -p "Want to load all the config? Not saved each config will be overwritten! (y/n) " ans
+  case $ans in
+  y)
+    load
+    break
+    ;;
+  n) exit 0 ;;
+  esac
+done

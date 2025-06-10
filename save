@@ -1,0 +1,7 @@
+#!/bin/bash
+
+configs=(btop ghostty hypr Kvantum mako nvim rofi waybar)
+
+for config in "${configs[@]}"; do
+  cp -r "$HOME/.config/$config" "./config/"
+done
