@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 configs=(btop ghostty hypr Kvantum mako nvim rofi waybar)
 
